@@ -32,14 +32,15 @@ git clone https://github.com/yudasss/syncplay.git $APP_DIR
 cd $APP_DIR/backend
 
 echo "⚙️ [5/5] Installing dependencies and starting server..."
-npm install --production
+npm install
+npm rebuild better-sqlite3 2>/dev/null || true
 
 # Allow port 3001 through firewall
 ufw allow 3001/tcp 2>/dev/null || true
 
-# Start backend with PM2
+# Start backend with PM2 with explicit cwd
 pm2 delete syncplay 2>/dev/null || true
-pm2 start server.js --name "syncplay"
+pm2 start server.js --name "syncplay" --cwd "$APP_DIR/backend"
 
 # Start cloudflared tunnel with PM2
 pm2 delete tunnel 2>/dev/null || true
