@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sync Play</string>
+    <string name="title_activity_main">Sync Play</string>
+    <string name="package_name">com.ydaapr.syncplay</string>
+    <string name="custom_url_scheme">com.ydaapr.syncplay</string>
+</resources>

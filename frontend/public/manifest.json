@@ -1,0 +1,24 @@
+{
+  "name": "Sync Play",
+  "short_name": "Sync Play",
+  "description": "Aplikasi musik studio tanpa iklan untuk berdua dengan lirik tersinkronisasi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#26272C",
+  "theme_color": "#26272C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

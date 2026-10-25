@@ -1,0 +1,110 @@
+.liquidContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #060609;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: 0.42;
+  will-change: transform;
+}
+
+/* Emerald / Jade Orb */
+.orb1 {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, #1db954 0%, rgba(29, 185, 84, 0) 70%);
+  top: -100px;
+  left: -80px;
+  animation: floatOrb1 18s ease-in-out infinite alternate;
+}
+
+/* Electric Sapphire Orb */
+.orb2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #2563eb 0%, rgba(37, 99, 235, 0) 70%);
+  top: 30%;
+  right: -140px;
+  animation: floatOrb2 22s ease-in-out infinite alternate;
+}
+
+/* Romantic Violet / Rose Orb */
+.orb3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #a855f7 0%, rgba(168, 85, 247, 0) 70%);
+  bottom: -100px;
+  left: 20%;
+  animation: floatOrb3 20s ease-in-out infinite alternate;
+}
+
+/* Golden Sunset Accent Orb */
+.orb4 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #f43f5e 0%, rgba(244, 63, 94, 0) 70%);
+  top: 15%;
+  left: 45%;
+  opacity: 0.28;
+  animation: floatOrb4 25s ease-in-out infinite alternate;
+}
+
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(6, 6, 9, 0.4) 100%);
+  opacity: 0.6;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(120px, 80px) scale(1.15); }
+  100% { transform: translate(40px, 140px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-100px, 60px) scale(1.1); }
+  100% { transform: translate(-50px, -80px) scale(0.9); }
+}
+
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -90px) scale(1.2); }
+  100% { transform: translate(90px, -40px) scale(1); }
+}
+
+@keyframes floatOrb4 {
+  0% { transform: translate(0, 0) scale(0.9); }
+  50% { transform: translate(70px, -60px) scale(1.15); }
+  100% { transform: translate(-60px, 40px) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .orb {
+    filter: blur(75px);
+    opacity: 0.38;
+  }
+  .orb1 {
+    width: 340px;
+    height: 340px;
+  }
+  .orb2 {
+    width: 380px;
+    height: 380px;
+  }
+  .orb3 {
+    width: 320px;
+    height: 320px;
+  }
+  .orb4 {
+    display: none;
+  }
+}

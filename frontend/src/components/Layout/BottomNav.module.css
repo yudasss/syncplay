@@ -1,0 +1,152 @@
+.bottomNavWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* ============================================================
+     DEFAULT MATTE THEME: Flush Spotify-style docked bottom bar
+     ============================================================ */
+  .bottomNavWrapper {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 60;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+    padding: 0 0 env(safe-area-inset-bottom, 0px);
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .bottomNav {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 56px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    align-items: center;
+    user-select: none;
+  }
+
+  .slidingPill {
+    display: none;
+  }
+
+  .tabItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 100%;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .tabItem:active {
+    transform: scale(0.95);
+  }
+
+  .tabIcon {
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+
+  .tabLabel {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: color 0.15s ease;
+  }
+
+  .tabItem.active {
+    color: var(--text-main);
+  }
+
+  .tabItem.active .tabIcon {
+    color: var(--accent);
+    transform: scale(1.08);
+  }
+
+  .tabItem.active .tabLabel {
+    color: var(--text-main);
+    font-weight: 700;
+  }
+
+  /* ============================================================
+     LIQUID GLASS THEME: Floating iOS Island Dock & Glowing Capsule
+     ============================================================ */
+  :global([data-theme="glass"]) .bottomNavWrapper {
+    background: transparent !important;
+    border-top: none !important;
+    pointer-events: none;
+    padding: 0 16px calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    align-items: center;
+  }
+
+  :global([data-theme="glass"]) .bottomNav {
+    max-width: 440px;
+    height: 60px;
+    background: rgba(14, 14, 24, 0.75) !important;
+    backdrop-filter: blur(28px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
+    border-radius: var(--radius-full) !important;
+    box-shadow: 0 14px 44px rgba(0, 0, 0, 0.7), inset 0 1px 2px 0 rgba(255, 255, 255, 0.35) !important;
+    padding: 4px;
+    pointer-events: auto;
+    touch-action: none;
+  }
+
+  :global([data-theme="glass"]) .slidingPill {
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: calc((100% - 8px) / 5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.1)) !important;
+    border-radius: var(--radius-full) !important;
+    border: 1px solid rgba(255, 255, 255, 0.32) !important;
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.45), 0 4px 20px rgba(29, 185, 84, 0.25) !important;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  :global([data-theme="glass"]) .tabItem {
+    position: relative;
+    z-index: 2;
+    border-radius: var(--radius-full);
+  }
+
+  :global([data-theme="glass"]) .tabItem.active .tabIcon {
+    color: var(--accent);
+    transform: translateY(-1px) scale(1.08);
+  }
+
+  :global([data-theme="glass"][data-theme-mode="light"]) .bottomNav {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1px solid rgba(0, 0, 0, 0.09) !important;
+    box-shadow: 0 14px 44px rgba(0, 0, 0, 0.08), inset 0 1px 2px 0 rgba(255, 255, 255, 0.9) !important;
+  }
+
+  :global([data-theme="glass"][data-theme-mode="light"]) .slidingPill {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.03)) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), 0 4px 16px var(--accent-dim) !important;
+  }
+}

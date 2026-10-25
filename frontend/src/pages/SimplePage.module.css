@@ -1,0 +1,156 @@
+.page {
+  padding: 32px 36px 60px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 36px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.heroLiked {
+  width: 170px;
+  height: 170px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e11d48, #be123c);
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 12px 32px rgba(225, 29, 72, 0.35);
+}
+
+.heroHistory {
+  width: 170px;
+  height: 170px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+}
+
+.metaBox {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.type {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.songList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  padding: 60px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.empty h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.empty p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  max-width: 360px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: max(44px, calc(env(safe-area-inset-top, 0px) + 16px)) 16px calc(170px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .heroLiked, .heroHistory {
+    width: 140px;
+    height: 140px;
+    border-radius: var(--radius-lg);
+  }
+
+  .metaBox {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+  }
+
+  .actionRow {
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px;
+  }
+}

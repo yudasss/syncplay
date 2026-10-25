@@ -1,0 +1,196 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--trans-fast);
+  background: transparent;
+  user-select: none;
+}
+
+.card:hover {
+  background: var(--bg-surface-2);
+}
+
+.card.active {
+  background: var(--accent-dim);
+}
+
+.card:hover .playOverlay {
+  opacity: 1;
+}
+
+.card:hover .indexNumber {
+  opacity: 0;
+}
+
+.indexCell {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.indexNumber {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  transition: opacity var(--trans-fast);
+}
+
+.coverFrame {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-surface-3);
+  flex-shrink: 0;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity var(--trans-fast);
+}
+
+.card.active .playOverlay {
+  color: var(--accent);
+}
+
+.metaCol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.songTitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.titleActive {
+  color: var(--accent) !important;
+}
+
+.songArtist {
+  font-size: 0.76rem;
+  color: var(--text-sub);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duration {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--trans-fast);
+}
+
+.card:hover .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  transition: all var(--trans-fast);
+}
+
+.actionBtn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.liked {
+  color: var(--duo-accent) !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 8px 10px;
+    gap: 12px;
+    border-radius: var(--radius-md);
+    min-height: 58px;
+  }
+
+  .indexCell {
+    display: none;
+  }
+
+  .coverFrame {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+  }
+
+  .songTitle {
+    font-size: 0.94rem;
+    font-weight: 600;
+  }
+
+  .songArtist {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+  }
+
+  .duration {
+    display: none;
+  }
+
+  .actions {
+    opacity: 1;
+    gap: 4px;
+  }
+
+  .actionBtn {
+    width: 36px;
+    height: 36px;
+    color: var(--text-sub);
+  }
+}

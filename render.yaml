@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: syncplay-backend
+    env: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: singapore
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production

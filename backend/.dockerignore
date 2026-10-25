@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+harmonia.db-shm
+harmonia.db-wal
+bin/*.exe

@@ -1,0 +1,346 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.backBtn {
+  color: var(--text-main);
+  padding: 6px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-fast);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-2px);
+}
+
+.title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+}
+
+/* ============================================================
+   Interactive Phone Mockup Preview
+   ============================================================ */
+.mockupSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0 16px;
+}
+
+.phoneMockup {
+  position: relative;
+  width: 170px;
+  height: 255px;
+  border-radius: 28px;
+  border: 2.5px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+:global([data-theme-mode="light"]) .phoneMockup {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.mockupTopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mockupDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.mockupPrimaryCard {
+  width: 100%;
+  height: 64px;
+  border-radius: 12px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.mockupCardRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  height: 78px;
+}
+
+.mockupSplitCardLeft {
+  flex: 1;
+  height: 100%;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.mockupSplitCardRight {
+  flex: 1;
+  height: 100%;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.mockupBottomDot {
+  align-self: flex-end;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-top: 6px;
+  transition: background-color 0.3s ease;
+}
+
+/* ============================================================
+   Control Panel Card
+   ============================================================ */
+.controlCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionLabel {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+/* Theme Mode Row */
+.modeRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.modeCircleBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modeCircleBtn:hover {
+  transform: scale(1.08);
+}
+
+.modeCircleBtn.modeActive {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim), 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: scale(1.06);
+}
+
+.modeDynamicBtn {
+  background: transparent;
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-main);
+}
+
+.modeLightBtn {
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+}
+
+.modeEspressoBtn {
+  background: #1e1614;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modeAmoledBtn {
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Color Palette Row */
+.paletteScrollRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 4px 2px 8px;
+}
+
+.paletteScrollRow::-webkit-scrollbar {
+  display: none;
+}
+
+.paletteIconBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-dim), 0 4px 14px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.swatchPill {
+  width: 44px;
+  height: 42px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid var(--border-strong);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: all var(--trans-fast);
+  padding: 0;
+  background: transparent;
+}
+
+.swatchPill:hover {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.swatchPill.swatchActive {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px var(--accent-glow), 0 4px 16px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.swatchTop {
+  width: 100%;
+  height: 50%;
+}
+
+.swatchBottom {
+  width: 100%;
+  height: 50%;
+}
+
+/* Liquid Glass Toggle */
+.glassToggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  gap: 16px;
+}
+
+.glassToggleMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.glassTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glassIcon {
+  color: var(--accent);
+}
+
+.glassTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.glassSub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.switchBtn {
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-3);
+  border: 1px solid var(--border-subtle);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  flex-shrink: 0;
+}
+
+.switchHandle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.switchOn {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+.switchOn .switchHandle {
+  transform: translateX(20px);
+}
+
+/* Liquid Glass Mode Enhancement */
+:global([data-theme="glass"]) .controlCard {
+  background: rgba(22, 22, 32, 0.55) !important;
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+}

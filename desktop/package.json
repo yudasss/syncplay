@@ -1,0 +1,16 @@
+{
+  "name": "harmonia-desktop",
+  "version": "1.0.0",
+  "description": "Harmonia Music Player Desktop",
+  "main": "main.cjs",
+  "author": "ydaapr.dev",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . Harmonia --platform=win32 --arch=x64 --out=../dist-apps/windows --overwrite"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^34.2.0",
+    "electron-packager": "^17.1.2"
+  }
+}

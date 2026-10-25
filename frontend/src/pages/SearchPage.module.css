@@ -1,0 +1,225 @@
+.page {
+  padding: 32px 36px 60px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Floating Search Bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  max-width: 640px;
+  margin-bottom: 32px;
+  transition: all var(--trans-fast);
+}
+
+.searchBar:focus-within {
+  background: var(--bg-surface-3);
+  border-color: var(--border-strong);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.searchIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.clearBtn {
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  transition: color var(--trans-fast);
+}
+
+.clearBtn:hover {
+  color: var(--text-main);
+}
+
+/* Tags Section */
+.tagsSection {
+  margin-bottom: 32px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.trendIcon {
+  color: var(--accent);
+}
+
+.tagsTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.tagGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tagBtn {
+  padding: 8px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  transition: all var(--trans-fast);
+}
+
+.tagBtn:hover {
+  background: var(--bg-surface-2);
+  border-color: var(--border-strong);
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+/* Results */
+.resultsSection {
+  margin-top: 16px;
+}
+
+.resultsHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.resultsHeader h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.resultsCount {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.songList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Loading & Empty */
+.centerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  gap: 12px;
+}
+
+.emptyIconBox {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.loadingText {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--error);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: max(44px, calc(env(safe-area-inset-top, 0px) + 16px)) 16px calc(170px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .searchBar {
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    min-height: 48px;
+    border-radius: var(--radius-full);
+  }
+
+  .searchInput {
+    font-size: 0.95rem;
+  }
+
+  .tagBtn {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+    min-height: 38px;
+    border-radius: var(--radius-full);
+  }
+}
+
