@@ -4,6 +4,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
+app.enable('trust proxy');
 const PORT = process.env.PORT || 3001;
 
 // Middleware

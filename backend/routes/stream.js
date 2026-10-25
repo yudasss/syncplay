@@ -158,7 +158,11 @@ router.get('/:youtubeId', async (req, res) => {
       `).run(parseInt(userId), song.id);
     }
 
-    res.json({ url: audioUrl, song, resolvedYoutubeId: youtubeId });
+    const proto = req.headers['x-forwarded-proto'] || req.protocol || 'https';
+    const host = req.headers['x-forwarded-host'] || req.get('host');
+    const proxyUrl = `${proto}://${host}/api/stream/${youtubeId}/proxy`;
+
+    res.json({ url: proxyUrl, directUrl: audioUrl, song, resolvedYoutubeId: youtubeId });
   } catch (err) {
     console.error('[Stream] Error:', err.message);
     res.status(500).json({ error: 'Failed to get stream URL', message: err.message });
