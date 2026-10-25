@@ -30,18 +30,28 @@ const fs = require('fs');
 // App Binary Downloads
 app.get('/api/download/android', (req, res) => {
   const dir = path.resolve(__dirname, '..', 'dist-apps');
-  res.sendFile('SyncPlay-v1.0.apk', {
-    root: dir,
-    headers: { 'Content-Disposition': 'attachment; filename="SyncPlay-v1.0.apk"' }
-  });
+  const file = path.join(dir, 'SyncPlay-v1.0.apk');
+  if (fs.existsSync(file)) {
+    res.sendFile('SyncPlay-v1.0.apk', {
+      root: dir,
+      headers: { 'Content-Disposition': 'attachment; filename="SyncPlay-v1.0.apk"' }
+    });
+  } else {
+    res.status(404).json({ error: 'APK is not bundled in cloud server' });
+  }
 });
 
 app.get('/api/download/windows', (req, res) => {
   const dir = path.resolve(__dirname, '..', 'dist-apps');
-  res.sendFile('SyncPlay-Windows-v1.0.zip', {
-    root: dir,
-    headers: { 'Content-Disposition': 'attachment; filename="SyncPlay-Windows-v1.0.zip"' }
-  });
+  const file = path.join(dir, 'SyncPlay-Windows-v1.0.zip');
+  if (fs.existsSync(file)) {
+    res.sendFile('SyncPlay-Windows-v1.0.zip', {
+      root: dir,
+      headers: { 'Content-Disposition': 'attachment; filename="SyncPlay-Windows-v1.0.zip"' }
+    });
+  } else {
+    res.status(404).json({ error: 'Windows installer is not bundled in cloud server' });
+  }
 });
 
 // Health check
